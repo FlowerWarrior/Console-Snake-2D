@@ -9,7 +9,7 @@
 ### Special Font
 - Right click on console title 
 - <img src="https://i.ibb.co/g6RM0w1/1.png" width="200" />
-- Choose font tab 
+- Choose "Font" tab 
 - <img src="https://i.ibb.co/pQm70YH/2.png" width="200" />
 - Set font to "Raster Fonts" 
 - <img src="https://i.ibb.co/zQRPdZD/3.png" width="200" />

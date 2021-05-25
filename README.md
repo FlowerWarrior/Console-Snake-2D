@@ -1,1 +1,2 @@
-# Console-Snake-2D
+# Console Snake 2D
+Written in C++

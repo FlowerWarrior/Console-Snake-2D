@@ -1,7 +1,7 @@
 # Console Snake 2D
 - Written in C++
 - Windows only!
-### How to play?
+## How to play?
 - Control with WASD keys
 - Eat apples ('A')
 - Avoid walls ('|||')

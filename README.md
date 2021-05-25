@@ -7,7 +7,7 @@
 - Avoid walls ('|||')
 - Don't hit yourself
 ### Special Font (letters height is equal to width)
-** 1. Right click on console title **
+**1. Right click on console title**
 <img src="https://i.ibb.co/b25stwq/image.png" width="200" />
 
 ** 2. Choose "Properties" **

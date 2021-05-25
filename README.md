@@ -7,15 +7,15 @@
 - Avoid walls ('|||')
 - Don't hit yourself
 ### Special Font
-- Right click on console title
+#### 1. Right click on console title
 <img src="https://i.ibb.co/b25stwq/image.png" width="200" />
-- Choose "Properties"
+#### 2. Choose "Properties"
 <img src="https://i.ibb.co/g6RM0w1/1.png" width="200" />
-- Choose "Font" tab 
+#### 3. Choose "Font" tab 
 <img src="https://i.ibb.co/pQm70YH/2.png" width="200" />
-- Set font to "Raster Fonts" 
+#### 4. Set font to "Raster Fonts" 
 <img src="https://i.ibb.co/zQRPdZD/3.png" width="200" />
-- Set size to "8x8" 
+#### 5. Set size to "8x8" 
 <img src="https://i.ibb.co/MRG8zgY/4.png" width="200" />
 
 ### Screenshots

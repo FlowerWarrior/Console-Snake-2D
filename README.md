@@ -1,2 +1,3 @@
 # Console Snake 2D
-Written in C++
+- Written in C++
+- Windows only!

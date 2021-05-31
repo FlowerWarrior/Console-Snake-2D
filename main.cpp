@@ -254,7 +254,7 @@ int main()
     HWND hwnd = GetConsoleWindow();
 
     // Set console size and pos
-    RECT rect = {100, 100, 300, 240};
+    RECT rect = {100, 100, 400, 240};
     MoveWindow(hwnd, rect.left, rect.top, rect.right-rect.left, rect.bottom-rect.top,TRUE);
 
     SetNormalFont();

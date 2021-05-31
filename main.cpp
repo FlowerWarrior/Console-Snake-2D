@@ -19,7 +19,7 @@ vec2 applePos;
 bool appleReady = false;
 vec2 obstaclePos;
 bool obstacleReady = false;
-char screen[20][20];
+char screen[20][20] = {' '};
 char background[20][20];
 int gameSpeed = 1;
 bool gameOver = false;
@@ -187,7 +187,7 @@ void Draw(){
         // Clear screen buffer
         for(int x = 0; x < screenSize.x; x++){
             for(int y = 0; y < screenSize.y; y++){
-                screen[x][y] = NULL;
+                screen[x][y] = ' ';
             }
         }
 
@@ -234,6 +234,9 @@ int main()
             }
             else if (rnd == 1){
                 background[x][y] = '.';
+            }
+            else{
+                background[x][y] = ' ';
             }
         }
     }

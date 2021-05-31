@@ -4,12 +4,24 @@
 #include <chrono>
 #include <stdlib.h>
 #include <time.h>
+#include <cwchar>
 
 using namespace std;
 
 struct vec2{
     int x, y;
 };
+
+void WelcomeScreen(int ms){
+    cout << "Snake Console Game" << endl;
+    cout << "------------------" << endl;
+    cout << "How to play?" << endl;
+    cout << "- Control with WASD keys" << endl;
+    cout << "- Eat apples ('A')" << endl;
+    cout << "- Avoid walls ('|||')" << endl;
+    cout << "- Don't hit yourself" << endl;
+    Sleep(ms);
+}
 
 vec2 screenSize = {20, 20};
 vec2 snake[40] = { NULL, NULL };
@@ -23,6 +35,30 @@ char screen[20][20] = {' '};
 char background[20][20];
 int gameSpeed = 1;
 bool gameOver = false;
+
+void SetMonospaceFont(){
+    CONSOLE_FONT_INFOEX cfi;
+    cfi.cbSize = sizeof(cfi);
+    cfi.nFont = 0;
+    cfi.dwFontSize.X = 14;                   // Width of each character in the font
+    cfi.dwFontSize.Y = 14;                  // Height
+    cfi.FontFamily = FF_DONTCARE;
+    cfi.FontWeight = FW_NORMAL;
+    std::wcscpy(cfi.FaceName, L"Lucida Console"); // Choose your font
+    SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+}
+
+void SetNormalFont(){
+    CONSOLE_FONT_INFOEX cfi;
+    cfi.cbSize = sizeof(cfi);
+    cfi.nFont = 0;
+    cfi.dwFontSize.X = 8;                   // Width of each character in the font
+    cfi.dwFontSize.Y = 16;                  // Height
+    cfi.FontFamily = FF_DONTCARE;
+    cfi.FontWeight = FW_NORMAL;
+    std::wcscpy(cfi.FaceName, L"Consolas"); // Choose your font
+    SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+}
 
 void SpawnApple(){
     while(!gameOver){
@@ -90,11 +126,6 @@ void SpawnObstacle(){
 }
 
 void OutputScreen(){
-
-    // Set console size and pos
-    HWND hwnd = GetConsoleWindow();
-    RECT rect = {100, 100, 310, 310};
-    MoveWindow(hwnd, rect.left, rect.top, rect.right-rect.left, rect.bottom-rect.top,TRUE);
 
     while(!gameOver){
         // Clear screen
@@ -220,6 +251,18 @@ void Draw(){
 
 int main()
 {
+    HWND hwnd = GetConsoleWindow();
+
+    // Set console size and pos
+    RECT rect = {100, 100, 300, 240};
+    MoveWindow(hwnd, rect.left, rect.top, rect.right-rect.left, rect.bottom-rect.top,TRUE);
+
+    SetNormalFont();
+    WelcomeScreen(5000);
+
+    // Special font
+    SetMonospaceFont();
+
     // Inital snake pos
     for (int i = 0; i < snakeSize; i++){
         snake[i] = {10, 8+i};
@@ -240,6 +283,10 @@ int main()
             }
         }
     }
+
+     // Set console size and pos
+    RECT rect2 = {100, 100, 440, 460};
+    MoveWindow(hwnd, rect2.left, rect2.top, rect2.right-rect2.left, rect2.bottom-rect2.top,TRUE);
 
     thread t_draw(Draw);
     thread t_snake(Snake);
